@@ -124,8 +124,30 @@ body {
 }
 
 /* ── Typography ──────────────────────────────── */
+/* ── Typography ──────────────────────────────── */
 .serif { font-family: 'DM Serif Display', serif; }
-.serif-italic { font-family: 'DM Serif Display', serif; font-style: italic; }
+
+/* Azonix для имени и главного призыва в контактах */
+.hero-name, 
+.hero-name-ghost, 
+.contact-heading {
+  font-family: 'Azonix', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Leoscar для заголовков секций (Projects, Skills) */
+.section-title {
+  font-family: 'Leoscar', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: normal;
+}
+
+/* Оставляем DM Serif для номеров и карточек */
+.section-num, .card-title {
+  font-family: 'DM Serif Display', serif;
+}
 
 /* ── Layout ──────────────────────────────────── */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
@@ -158,13 +180,11 @@ section { position: relative; z-index: 10; }
   color: rgba(255,255,255,.22);
   display: block; margin-bottom: 2.5rem;
 }
-.hero-name {
-  font-size: clamp(3.8rem, 11vw, 10rem);
-  line-height: .88;
-  letter-spacing: -.02em;
-}
-.hero-name-ghost {
-  color: rgba(255,255,255,.14);
+/* Обновляем шрифт имени в Hero-секции */
+.hero-name, .hero-name-ghost {
+  font-family: 'Azonix', sans-serif;
+  letter-spacing: 0.05em; /* Azonix — широкий шрифт, небольшой отступ ему идет на пользу */
+  text-transform: uppercase;
 }
 .hero-rule {
   display: flex; align-items: center; gap: 1.5rem;
@@ -233,9 +253,12 @@ section { position: relative; z-index: 10; }
   text-transform: uppercase; color: rgba(255,255,255,.18);
   display: block; margin-bottom: .75rem;
 }
+/* Обновляем шрифт заголовков секций */
 .section-title {
-  font-size: clamp(2.5rem,5vw,4rem);
-  line-height: 1;
+  font-family: 'Leoscar', serif;
+  font-weight: normal;
+  letter-spacing: 0.2em; /* Было 0.1em */
+  text-transform: uppercase;
 }
 .section-num {
   font-size: 6rem; line-height: 1;
@@ -359,9 +382,14 @@ section { position: relative; z-index: 10; }
   min-height: 70vh;
   display: flex; flex-direction: column; justify-content: center;
 }
+/* Обновляем шрифт заголовка в секции контактов */
 .contact-heading {
-  font-size: clamp(1.8rem,5.5vw,4.5rem);
-  line-height: 1.05; margin-bottom: 2rem; max-width: 700px;
+  font-family: 'Azonix', sans-serif; /* Добавь это здесь */
+  font-size: clamp(1.8rem, 5.5vw, 4.5rem);
+  line-height: 1.05; 
+  margin-bottom: 2rem; 
+  max-width: 700px;
+  text-transform: uppercase; /* Azonix лучше всего в капсе */
 }
 .contact-heading-ghost { color: rgba(255,255,255,.16); font-style: italic; }
 .contact-email {
@@ -432,8 +460,8 @@ footer {
   <div style="max-width:900px">
     <span class="hero-label reveal">Portfolio — 2025</span>
 
-    <h1 class="serif hero-name reveal" style="transition-delay:.08s">Maxim</h1>
-    <h1 class="serif-italic hero-name hero-name-ghost reveal" style="transition-delay:.16s">Samarin</h1>
+    <h1 class="hero-name reveal" style="transition-delay:.08s">Maxim</h1>
+    <h1 class="hero-name-ghost reveal" style="transition-delay:.16s">Samarin</h1>
 
     <div class="hero-rule reveal" style="transition-delay:.26s">
       <span class="hero-rule-line"></span>
@@ -467,7 +495,7 @@ footer {
   <div class="section-header reveal">
     <div>
       <span class="section-label">Selected Work</span>
-      <h2 class="serif section-title">Projects</h2>
+      <h2 class="section-title reveal">Projects</h2>
     </div>
     <span class="serif section-num">02</span>
   </div>
@@ -566,20 +594,20 @@ footer {
 <div class="section-inner">
   <span class="section-label reveal">Get in Touch</span>
 
-  <h2 class="serif contact-heading reveal" style="transition-delay:.08s">
-    Open to internships,<br>
-    <span class="contact-heading-ghost">collaborations</span> &amp; new ideas.
+  <h2 class="contact-heading reveal" style="transition-delay:.08s">
+  Open to internships,<br>
+  <span class="contact-heading-ghost">collaborations</span> &amp; new ideas.
   </h2>
 
-  <a class="contact-email reveal" href="mailto:msamarin.2007@gmail.com" style="transition-delay:.18s">
+  <a class="contact-email reveal" href="https://github.com/sannder01" style="transition-delay:.18s">
     msamarin.2007@gmail.com
     <span class="contact-email-arrow">↗</span>
   </a>
 
   <div class="contact-meta reveal" style="transition-delay:.28s">
     <div>
-      <span class="meta-item-label">GitHub</span>
-      <span class="meta-item-value">github.com/maxsamarin</span>
+      <span class="meta-item-label">gmail</span>
+      <span class="meta-item-value">msamarin.2007@gmail.com</span>
     </div>
     <div>
       <span class="meta-item-label">Telegram</span>
