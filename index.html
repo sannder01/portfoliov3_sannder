@@ -187,10 +187,27 @@ section { position: relative; z-index: 10; }
   display: block; margin-bottom: 2.5rem;
 }
 /* Обновляем шрифт имени в Hero-секции */
+/* Увеличиваем ФИ */
 .hero-name, .hero-name-ghost {
-  font-family: 'Azonix', sans-serif;
-  letter-spacing: 0.05em; /* Azonix — широкий шрифт, небольшой отступ ему идет на пользу */
+  font-family: 'Azonix', sans-serif !important;
+  /* clamp позволяет тексту быть огромным на ПК и адекватным на телефоне */
+  font-size: clamp(3.5rem, 12vw, 9rem); 
+  line-height: 0.85; /* Прижимаем строки друг к другу для стиля */
+  letter-spacing: -0.02em; /* Немного сужаем для плотности */
   text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+/* Эффект для фамилии (контурный текст) */
+.hero-name-ghost {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.3); /* Делаем фамилию прозрачной с обводкой */
+  transition: -webkit-text-stroke 0.5s ease;
+}
+
+.hero-name-ghost:hover {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.8);
 }
 .hero-rule {
   display: flex; align-items: center; gap: 1.5rem;
